@@ -1,0 +1,16 @@
+# Workflow Konfiguration (Metadaten)
+name: Hello World Workflow
+
+# Events
+on: push
+
+# Jobs
+jobs:
+    say-hello:
+        runs-on: ubuntu-latest
+
+        steps:
+            - run: pwd && ls -al
+            - uses: actions/checkout@v4.2.2
+            - run: pwd && ls -al
+            - run: node ./src/hello-world.js
